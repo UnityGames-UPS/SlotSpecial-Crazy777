@@ -463,7 +463,7 @@ public class SocketIOManager : MonoBehaviour
                     }
                     //   Application.ExternalCall("window.parent.postMessage", "onExit", "*");
 #if UNITY_WEBGL && !UNITY_EDITOR
-                        JSManager.SendCustomMessage("onExit");
+                        JSManager.SendCustomMessage("OnExit"); // was "onExit" — host matches "OnExit"
 #endif
                     break;
                 }
