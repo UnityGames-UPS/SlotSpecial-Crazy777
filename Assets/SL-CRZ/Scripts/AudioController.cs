@@ -6,7 +6,7 @@ using System;
 public class AudioController : MonoBehaviour
 {
     [SerializeField] internal AudioListener m_Player_Listener;
-    [SerializeField] internal AudioSource m_BG_Audio;
+    [SerializeField] private AudioSource m_BG_Audio;
     [SerializeField] internal AudioSource m_Click_Audio;
     [SerializeField] internal AudioSource m_Win_Audio;
     [SerializeField] internal AudioSource m_Bonus_Audio;

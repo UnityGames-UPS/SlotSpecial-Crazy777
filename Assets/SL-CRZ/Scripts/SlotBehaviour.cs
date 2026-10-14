@@ -79,8 +79,8 @@ public class SlotBehaviour : MonoBehaviour
     private bool IsAutoSpin = false;
     private bool IsFreeSpin = false;
     private bool IsSpinning = false;
-    internal bool CheckPopups = false;
-    internal bool WinLine = false;
+    private bool CheckPopups = false;
+    private bool WinLine = false;
     internal bool StopSpinToggle;
     private bool IsTurboOn;
     [SerializeField] private bool WasAutoSpinOn;
@@ -141,8 +141,8 @@ public class SlotBehaviour : MonoBehaviour
     private List<ImageAnimation> m_SlotAnimations = new List<ImageAnimation>();
     private List<int> simulatedResultReel = new List<int>(); // Contains the result reel values
 
-    internal int CurrentReSpinCount = 0;
-    internal double SingleRespinWin = 0.0;
+    private int CurrentReSpinCount = 0;
+    private double SingleRespinWin = 0.0;
     private void OnEnable()
     {
         InitiateButtons();
@@ -317,7 +317,7 @@ public class SlotBehaviour : MonoBehaviour
         //}
     }
 
-    internal void ChangeBet()
+    private void ChangeBet()
     {
         if (BetCounter < SocketManager.initialData.bets.Count)
         {
@@ -331,7 +331,7 @@ public class SlotBehaviour : MonoBehaviour
         }
     }
 
-    internal void LayoutReset(int number)
+    private void LayoutReset(int number)
     {
         //if (Slot_Elements[number]) Slot_Elements[number].ignoreLayout = true;
         m_UIManager.GetButton(m_Key.m_button_spin).interactable = true;
@@ -1020,12 +1020,12 @@ public class SlotBehaviour : MonoBehaviour
 
     #endregion
 
-    internal void DeactivateGamble()
+    private void DeactivateGamble()
     {
         StopAutoSpin();
     }
 
-    internal void CheckWinPopups()
+    private void CheckWinPopups()
     {
         //if (SocketManager.resultData.WinAmout >= currentTotalBet * 10 && SocketManager.resultData.WinAmout < currentTotalBet * 15)
         //{
@@ -1219,7 +1219,7 @@ public class SlotBehaviour : MonoBehaviour
         }
     }
 
-    internal List<Sprite> GetSlotAnimationList(string key)
+    private List<Sprite> GetSlotAnimationList(string key)
     {
         //Debug.Log(string.Concat("<color=yellow><b>", key, "</b></color>"));
         if (m_animated_slot_dictionary.ContainsKey(key))
@@ -1241,7 +1241,7 @@ public class SlotBehaviour : MonoBehaviour
         }
     }
 
-    internal List<Sprite> GetBonusAnimationList(string key)
+    private List<Sprite> GetBonusAnimationList(string key)
     {
         if (m_animated_bonus_dictionary.ContainsKey(key))
         {

@@ -1,4 +1,4 @@
-public class KeyStruct
+internal class KeyStruct
 {
     #region BUTTON_REFERENCES_KEY
     internal string m_button_spin = "Spin";
@@ -95,9 +95,9 @@ public class KeyStruct
     internal string m_object_2dollar_anim = "2Dollar_Anim";
     internal string m_object_1dollar_anim = "1Dollar_Anim";
     internal string m_object_respin_anim = "Respin_Anim";
-    internal string m_object_game_buttons_panel = "Game_Buttons_Panel";
-    internal string m_object_start_animation_panel = "Start_Animation_Panel";
-    internal string m_object_music_button_holder = "Music_Button_Holder";
+    private string m_object_game_buttons_panel = "Game_Buttons_Panel";
+    private string m_object_start_animation_panel = "Start_Animation_Panel";
+    private string m_object_music_button_holder = "Music_Button_Holder";
     internal string m_object_quit_popup = "Quit_Popup";
     internal string m_object_bet_panel = "Bet_Panel";
     internal string m_object_free_spin_panel = "FreeSpin_Panel";

@@ -9,15 +9,15 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     #region EVENTS_AND_DELEGATES
-    internal event Action OnGameStarted;
+    private event Action OnGameStarted;
     internal event Action OnSpinClicked;
     internal event Action OnAutoSpinClicked;
     internal event Action OnAutoSpinStopClicked;
     internal event Action OnBetButtonClicked;
-    internal event Action OnSpinSuccess;
-    internal event Action OnBonusReceived;
-    internal event Action OnFreeSpinReceived;
-    internal event Action OnFreeSpinEnded;
+    private event Action OnSpinSuccess;
+    private event Action OnBonusReceived;
+    private event Action OnFreeSpinReceived;
+    private event Action OnFreeSpinEnded;
     #endregion
 
     #region MANAGER_REFERENCES
@@ -35,11 +35,11 @@ public class GameManager : MonoBehaviour
 
     #region SERIALIZED_BOOLEANS
     [SerializeField]
-    protected internal bool TurboSpin = false;
+    internal bool TurboSpin = false;
     [SerializeField]
-    protected internal bool DemoFreeSpin = false;
+    private bool DemoFreeSpin = false;
     [SerializeField]
-    protected internal bool m_IsExit = false;
+    private bool m_IsExit = false;
     #endregion
 
     #region SERIALIZED_INTEGERS
@@ -250,7 +250,7 @@ public class GameManager : MonoBehaviour
         StopCoroutine(M_Initial_Animation);
     }
 
-    internal void SetBetMultiplier()
+    private void SetBetMultiplier()
     {
          m_UIManager.GetText(m_Key.m_text_any).text = (m_SocketManager.initialData.bets[m_SlotBehaviour.BetCounter] * double.Parse(m_SocketManager.initfeturesData.anyPayouts.defaults.ToString())).ToString();
          m_UIManager.respinsRangeText.text= m_SocketManager.initfeturesData.respin.min + "~" + m_SocketManager.initfeturesData.respin.max;
@@ -370,7 +370,7 @@ public class GameManager : MonoBehaviour
     }
 
     // This is the method use to trigger and off the turbo spin
-    internal void TurboSpinClickedAction()
+    private void TurboSpinClickedAction()
     {
         if (TurboSpin)
         {

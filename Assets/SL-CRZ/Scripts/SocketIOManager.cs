@@ -26,32 +26,32 @@ public class SocketIOManager : MonoBehaviour
     internal GameData initialData = null;
     internal UiData initUIData = null;
     internal Features initfeturesData = null;
-    internal GameData resultData = null;
+    private GameData resultData = null;
     internal Root resultdata = null;
     internal Player playerdata = null;
-    internal Message myMessage = null;
-    internal double GambleLimit = 0;
+    private Message myMessage = null;
+    private double GambleLimit = 0;
     [SerializeField]
-    internal List<string> bonusdata = null;
+    private List<string> bonusdata = null;
     private SocketManager manager;
 
-    protected string SocketURI = null;
+    private string SocketURI = null;
     //protected string TestSocketURI = "https://game-crm-rtp-backend.onrender.com/"; //HACK: Professional / Dev Server Address
-    protected string TestSocketURI = "http://localhost:5000";
+    private string TestSocketURI = "http://localhost:5000";
 
     [SerializeField]
     private string testToken;
     internal bool isResultdone = false;
-    [SerializeField] internal JSFunctCalls JSManager;
-    protected string gameID = "SL-CRZ";
+    [SerializeField] private JSFunctCalls JSManager;
+    private string gameID = "SL-CRZ";
     // protected string nameSpace="game"; //BackendChanges
-    protected string nameSpace = "playground"; //BackendChanges
+    private string nameSpace = "playground"; //BackendChanges
     private Socket gameSocket; //BackendChanges
     //protected string gameID = "";
     //protected string gameID = "";
 
     internal bool isLoaded = false;
-    internal bool SetInit = false;
+    private bool SetInit = false;
 
     private const int maxReconnectionAttempts = 6;
     private readonly TimeSpan reconnectionDelay = TimeSpan.FromSeconds(10);
@@ -598,7 +598,7 @@ public class SocketIOManager : MonoBehaviour
 
     //    return outputList;
     //}
-    internal List<List<int>> ConvertMatrixToInt(List<List<string>> stringMatrix)
+    private List<List<int>> ConvertMatrixToInt(List<List<string>> stringMatrix)
     {
         var intMatrix = new List<List<int>>();
 
